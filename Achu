@@ -6,11 +6,10 @@
     <title>For My Achuuu ❤️</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* --- General & Message Box Styles --- */
         body {
-            font-family: 'Dancing Script', cursive;
-            background-color: #ffe4e1;
-            color: #8b0000;
+            font-family: 'Dancing Script', cursive; /* A romantic, script font */
+            background-color: #ffe4e1; /* Misty Rose/Light Pink */
+            color: #8b0000; /* Dark Red/Maroon */
             text-align: center;
             padding: 50px;
             margin: 0;
@@ -18,83 +17,29 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow: hidden; 
-            position: relative;
-            cursor: pointer; /* Change cursor to indicate interactivity (click hearts) */
         }
         .message-box {
-            background-color: #fffaf0;
-            border: 5px solid #ff69b4;
+            background-color: #fffaf0; /* Floral White */
+            border: 5px solid #ff69b4; /* Hot Pink Border */
             border-radius: 20px;
             padding: 40px;
             max-width: 600px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             animation: fadeIn 3s ease-in-out;
-            z-index: 10; 
-            position: relative;
         }
         h1 {
-            color: #ff1493;
+            color: #ff1493; /* Deep Pink */
             font-size: 3em;
             margin-bottom: 20px;
         }
         p {
             font-size: 1.5em;
             line-height: 1.6;
-            white-space: pre-wrap;
+            white-space: pre-wrap; /* Keeps your formatting/line breaks */
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- Click/Tap Heart Animation Styles --- */
-        .click-heart {
-            position: fixed;
-            color: #ff007f; /* Vibrant Pink */
-            font-size: 40px;
-            pointer-events: none;
-            opacity: 0;
-            z-index: 1000; /* Must be on top */
-            animation: popAndFade 1s forwards;
-        }
-
-        @keyframes popAndFade {
-            0% {
-                transform: translate(-50%, -50%) scale(0.5);
-                opacity: 1;
-            }
-            100% {
-                transform: translate(-50%, -100px) scale(1.5); /* Floats up slightly */
-                opacity: 0;
-            }
-        }
-        
-        /* --- Floating Heart Animation Styles --- */
-        .heart {
-            position: absolute;
-            bottom: 0;
-            color: #ff69b4;
-            font-size: 20px;
-            transform: translateY(0);
-            pointer-events: none; 
-            opacity: 0.8;
-            animation: floatUp 6s infinite ease-in;
-        }
-
-        @keyframes floatUp {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0.5;
-            }
-            50% {
-                transform: translateY(-50vh) rotate(5deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) rotate(-5deg);
-                opacity: 0;
-            }
         }
     </style>
 </head>
@@ -105,48 +50,5 @@
             I love u alot and im ready to wi8 for you idk how many times im saying it but im finding different ways to say it to u ur always special to me and will be mine forever I will . I trust u alot and will treat u well more than anyone does i love u alot and I need u the most your voice is like music to my ears which calms me down and ur so so so pretty and beautiful.  My loml I love u alot
         </p>
     </div>
-
-    <script>
-        // --- 1. Floating Heart Animation ---
-        function createFloatingHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '&#10084;'; // Unicode heart symbol
-            
-            // Randomize position, duration, and size
-            heart.style.left = Math.random() * 100 + 'vw'; 
-            heart.style.animationDuration = Math.random() * 4 + 4 + 's';
-            heart.style.animationDelay = Math.random() * 2 + 's';
-            heart.style.fontSize = Math.random() * 10 + 20 + 'px';
-
-            document.body.appendChild(heart);
-
-            // Remove the heart element after its animation finishes
-            setTimeout(() => {
-                heart.remove();
-            }, 8000); 
-        }
-        // Create a new heart every 300 milliseconds
-        setInterval(createFloatingHeart, 300);
-
-
-        // --- 2. Heart Popping Animation on Click/Tap ---
-        document.addEventListener('click', (e) => {
-            const clickHeart = document.createElement('div');
-            clickHeart.classList.add('click-heart');
-            clickHeart.innerHTML = '&#10084;';
-            
-            // Set position based on click coordinates
-            clickHeart.style.left = e.clientX + 'px';
-            clickHeart.style.top = e.clientY + 'px';
-
-            document.body.appendChild(clickHeart);
-
-            // Remove the heart after the animation completes (1 second)
-            setTimeout(() => {
-                clickHeart.remove();
-            }, 1000); 
-        });
-    </script>
 </body>
 </html>
